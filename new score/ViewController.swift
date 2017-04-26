@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var pingpang: UIImageView!
     @IBOutlet weak var Aimg: UIImageView!
     @IBOutlet weak var Bimg: UIImageView!
+    @IBOutlet weak var Aimage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,15 +103,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
                 X.text = "A选手获胜"
                 i = i + 1
                 n = n + 1
+                
             }
         }else if  x > y && x == 11 {
             X.text = "A选手获胜"
             i = i + 1
             n = n + 1
-            
     }
     }
     @IBAction func Badd(_ sender: UIButton) {
+        
         y = y + 1
         B.text = "\(y)"
         if x >= 10 && y >= 10{
@@ -130,11 +132,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         A.text = "\(x)"
         x = x - 1
         A.text = "\(x)"
+        if x<0{
+            A.text = "\(0)"
+        }
     }
     @IBAction func Bback(_ sender: UIButton) {
         B.text = "\(y)"
         y = y - 1
         B.text = "\(y)"
+        if y<0{
+            B.text = "\(0)"
+        }
     }
     @IBAction func end(_ sender: Any) {
         x = 0
