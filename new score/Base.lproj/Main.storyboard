@@ -111,7 +111,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pingpang.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="H5K-33-lLi">
+                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pingpang.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="H5K-33-lLi">
                                 <rect key="frame" x="32" y="28" width="317" height="137"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -127,6 +127,18 @@
                                 <rect key="frame" x="23" y="186" width="113" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyG-b1-1db">
+                                <rect key="frame" x="250" y="334" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="上传头像"/>
+                                <connections>
+                                    <action selector="Bput:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vot-Rk-Pbb"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23a-ns-9kg">
+                                <rect key="frame" x="228" y="186" width="114" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -134,6 +146,7 @@
                         <outlet property="A" destination="es6-2G-wrv" id="5uv-Op-MWZ"/>
                         <outlet property="Aimg" destination="pn8-pY-hjA" id="66U-4a-2GQ"/>
                         <outlet property="B" destination="HeX-yx-wcR" id="pio-4c-RTp"/>
+                        <outlet property="Bimg" destination="23a-ns-9kg" id="VRc-CN-DG5"/>
                         <outlet property="N" destination="M3M-XT-Fv9" id="61B-pg-kON"/>
                         <outlet property="X" destination="C35-oa-eOn" id="SUq-L0-2k4"/>
                         <outlet property="Y" destination="9on-Kh-Wez" id="RIH-QA-Rn2"/>
@@ -147,6 +160,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pingpang.jpg" width="800" height="581"/>
+        <image name="pingpang.jpg" width="784" height="480"/>
     </resources>
 </document>
