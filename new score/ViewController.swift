@@ -100,55 +100,63 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     @IBAction func Aadd(_ sender: UIButton) {
         x = x + 1
-        c = c + 1
         A.text = "\(x)"
-        if c<2{
+        if( (x+y)%4==1 || (x+y)%4==2){
             M.text = "A发球"
-        }else if c>2{
-            c = 0
+        }else if((x+y)%4==3 || (x+y)%4==0){
             M.text = "B发球"
         }
         if x >= 10 && y >= 10{
             if x >= y + 2{
-                X.text = "A选手获胜"
+                if((x+y)%2==0){
+                    M.text = "A发球"
+                }else if( (x+y)%2==1){
+                    M.text = "B发球"
+                }
+                A.text = "A获胜"
                 i = i + 1
                 n = n + 1
-                A.text = "\(11)"
+                A.text = A.text
                 
             }
-        }else if  x > y && x == 11 {
+        }else if  x > y && x >= 11 {
             
-            X.text = "A选手获胜"
-            if X.text != "A选手获胜" {
-                x = 0
-            }
             i = i + 1
             n = n + 1
+            A.text = "A获胜"
+            A.text = A.text
+            
     }
     
     }
     @IBAction func Badd(_ sender: UIButton) {
         y = y + 1
-        if c<2{
-            M.text = "B发球"
-        }else if c>=2{
-            c = 0
-            M.text = "A发球"
-        }
         B.text = "\(y)"
+        if (x+y)%4==1 || (x+y)%4==2{
+            M.text = "B发球"
+        }else if(x+y)%4==3 || (x+y)%4==0{
+            M.text = "A发球"
+
         if x >= 10 && y >= 10{
             if y >= x + 2{
-                X.text = "B选手获胜"
+                if(x+y)%2==0{
+                    M.text = "B发球"
+                }else if (x+y)%2==1{
+                    M.text = "A发球"
+                }
+                B.text = "B获胜"
                 j = j + 1
                 m = m + 1
+                B.text = B.text
             }
-        }else if  y > x && y == 11 {
-
-            X.text = "B选手获胜"
+        }else if  y > x && y >= 11 {
+            
+            B.text = "B选手获胜"
             j = j + 1
             m = m + 1
-            
+            B.text = B.text
         }
+    }
     }
     @IBAction func Aback(_ sender: UIButton) {
         A.text = "\(x)"
