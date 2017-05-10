@@ -14,6 +14,7 @@ var m : Int = 0
 var i : Int = 0
 var j : Int = 0
 var c : Int = 0
+var k : Int = 0
 
 var flagA : Int=0
 var flagB : Int=0
@@ -97,63 +98,58 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         y = 0
         A.text = "\(x)"
         B.text = "\(y)"
+        Y.text = "0"
+        Z.text = " VS "
+        N.text = "0"
     }
     @IBAction func Aadd(_ sender: UIButton) {
         x = x + 1
         A.text = "\(x)"
         if( (x+y)%4==1 || (x+y)%4==2){
-            M.text = "A发球"
+            M.text = "<- A发球"
         }else if((x+y)%4==3 || (x+y)%4==0){
-            M.text = "B发球"
+            M.text = "B发球 ->"
         }
+        
         if x >= 10 && y >= 10{
             if x >= y + 2{
                 if((x+y)%2==0){
-                    M.text = "A发球"
+                    M.text = "<- A发球"
                 }else if( (x+y)%2==1){
-                    M.text = "B发球"
+                    M.text = "B发球 ->"
                 }
                 A.text = "A获胜"
                 i = i + 1
-                n = n + 1
                 A.text = A.text
-                
             }
         }else if  x > y && x >= 11 {
-            
             i = i + 1
-            n = n + 1
             A.text = "A获胜"
             A.text = A.text
-            
     }
-    
     }
     @IBAction func Badd(_ sender: UIButton) {
         y = y + 1
         B.text = "\(y)"
         if (x+y)%4==1 || (x+y)%4==2{
-            M.text = "B发球"
+            M.text = "B发球 ->"
         }else if(x+y)%4==3 || (x+y)%4==0{
-            M.text = "A发球"
-
+            M.text = "<- A发球"
+            
         if x >= 10 && y >= 10{
             if y >= x + 2{
                 if(x+y)%2==0{
-                    M.text = "B发球"
+                    M.text = "B发球 ->"
                 }else if (x+y)%2==1{
-                    M.text = "A发球"
+                    M.text = "<- A发球"
                 }
                 B.text = "B获胜"
                 j = j + 1
-                m = m + 1
                 B.text = B.text
             }
         }else if  y > x && y >= 11 {
-            
-            B.text = "B选手获胜"
             j = j + 1
-            m = m + 1
+            B.text = "B获胜"
             B.text = B.text
         }
     }
@@ -183,14 +179,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         X.text = ""
         M.text = ""
         if i >= j{
+            n = n + 1
             Y.text = "\(n)"
             Z.text = " VS "
             N.text = "\(m)"
+  
         }else if j >= i{
+            m = m + 1
             Y.text = "\(n)"
             Z.text = " VS "
             N.text = "\(m)"
         }
         
     }
+    
 }
