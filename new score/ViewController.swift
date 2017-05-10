@@ -25,7 +25,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var pingpang: UIImageView!
     @IBOutlet weak var Aimg: UIImageView!
     @IBOutlet weak var Bimg: UIImageView!
-    @IBOutlet weak var Aimage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +91,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var N: UITextField!
     @IBOutlet weak var M: UITextField!
 
+    @IBAction func addinfo(_ sender: Any) {
+
+    }
     
     @IBAction func start(_ sender: Any) {
         x = 0
@@ -105,17 +107,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func Aadd(_ sender: UIButton) {
         x = x + 1
         A.text = "\(x)"
+        if x <= 10 && y<=10 {
         if( (x+y)%4==1 || (x+y)%4==2){
             M.text = "<- A发球"
         }else if((x+y)%4==3 || (x+y)%4==0){
             M.text = "B发球 ->"
         }
-        
+        }
         if x >= 10 && y >= 10{
             if x >= y + 2{
                 if((x+y)%2==0){
                     M.text = "<- A发球"
-                }else if( (x+y)%2==1){
+                }else if((x+y)%2==1){
                     M.text = "B发球 ->"
                 }
                 A.text = "A获胜"
@@ -131,17 +134,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func Badd(_ sender: UIButton) {
         y = y + 1
         B.text = "\(y)"
+        if x <= 10&&y<=10 {
         if (x+y)%4==1 || (x+y)%4==2{
-            M.text = "B发球 ->"
+            M.text = "<- A发球 "
         }else if(x+y)%4==3 || (x+y)%4==0{
-            M.text = "<- A发球"
-            
+            M.text = "B发球 ->"
+            }
+        }
         if x >= 10 && y >= 10{
             if y >= x + 2{
                 if(x+y)%2==0{
-                    M.text = "B发球 ->"
+                    M.text = "<- A发球 "
                 }else if (x+y)%2==1{
-                    M.text = "<- A发球"
+                    M.text = "B发球 ->"
                 }
                 B.text = "B获胜"
                 j = j + 1
@@ -153,7 +158,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             B.text = B.text
         }
     }
-    }
+
     @IBAction func Aback(_ sender: UIButton) {
         A.text = "\(x)"
         x = x - 1
@@ -190,7 +195,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             Z.text = " VS "
             N.text = "\(m)"
         }
-        
     }
-    
 }
