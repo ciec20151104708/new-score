@@ -15,7 +15,9 @@ var i : Int = 0
 var j : Int = 0
 var c : Int = 0
 var k : Int = 0
-
+var aname : String = ""
+var bname : String = ""
+var play : String = "发球"
 var flagA : Int=0
 var flagB : Int=0
 var dlg : Int = 0
@@ -30,7 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
     }
     @IBAction func Aput(_ sender: UIButton) {
-        if dlg==0{
+        
             flagA=1
             flagB=0
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
@@ -43,10 +45,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             }else{
                 print("读取相册错误")
             }
-        }
+        
       }
     @IBAction func Bput(_ sender: UIButton) {
-        if dlg==0{
+      
             flagB=1
             flagA=0
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
@@ -59,7 +61,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             }else{
                 print("读取相册错误")
             }
-        }
+        
         
     }
     func imagePickerController(_ picker: UIImagePickerController,
@@ -85,14 +87,44 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var A: UITextField!
     @IBOutlet weak var B: UITextField!
     @IBOutlet weak var X: UITextField!
-
     @IBOutlet weak var Y: UITextField!
     @IBOutlet weak var Z: UITextField!
     @IBOutlet weak var N: UITextField!
     @IBOutlet weak var M: UITextField!
+    @IBOutlet weak var nameA: UITextField!
+    @IBOutlet weak var nameB: UITextField!
 
     @IBAction func addinfo(_ sender: Any) {
-
+        
+            let alertController = UIAlertController(title: "系统登录", message: "请输入选手A和选手B的姓名", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addTextField { (textField:UITextField) in
+                textField.placeholder = "选手A"
+            }
+            alertController.addTextField { (textField:UITextField) in
+                textField.placeholder = "选手B"
+            }
+            
+            let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+            let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.default) { (UIAlertAction) in
+                let nameA = alertController.textFields![0]
+                let nameB = alertController.textFields![1]
+                self.nameA.textAlignment = .center
+                self.nameB.textAlignment = .center
+                self.nameA.text = nameA.text
+                self.nameB.text = nameB.text
+                aname = (nameA.text!)
+                bname = (nameB.text!)
+ 
+            }
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            
+            
+            // 弹出
+            self.present(alertController, animated: true, completion: nil)
+        
     }
     
     @IBAction func start(_ sender: Any) {
@@ -109,17 +141,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         A.text = "\(x)"
         if x <= 10 && y<=10 {
         if( (x+y)%4==1 || (x+y)%4==2){
-            M.text = "<- A发球"
+            M.text = aname + play
         }else if((x+y)%4==3 || (x+y)%4==0){
-            M.text = "B发球 ->"
+            M.text = bname + play
         }
         }
         if x >= 10 && y >= 10{
             if x >= y + 2{
                 if((x+y)%2==0){
-                    M.text = "<- A发球"
+                    M.text = aname + play
                 }else if((x+y)%2==1){
-                    M.text = "B发球 ->"
+                    M.text = bname + play
                 }
                 A.text = "A获胜"
                 i = i + 1
@@ -136,17 +168,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         B.text = "\(y)"
         if x <= 10&&y<=10 {
         if (x+y)%4==1 || (x+y)%4==2{
-            M.text = "<- A发球 "
+            M.text = aname + play
         }else if(x+y)%4==3 || (x+y)%4==0{
-            M.text = "B发球 ->"
+            M.text = bname + play
             }
         }
         if x >= 10 && y >= 10{
             if y >= x + 2{
                 if(x+y)%2==0{
-                    M.text = "<- A发球 "
+                    M.text = aname + play
                 }else if (x+y)%2==1{
-                    M.text = "B发球 ->"
+                    M.text = bname + play
                 }
                 B.text = "B获胜"
                 j = j + 1
