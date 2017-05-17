@@ -32,7 +32,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
     }
     @IBAction func Aput(_ sender: UIButton) {
-        
             flagA=1
             flagB=0
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
@@ -48,7 +47,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         
       }
     @IBAction func Bput(_ sender: UIButton) {
-      
             flagB=1
             flagA=0
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
@@ -96,7 +94,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
 
     @IBAction func addinfo(_ sender: Any) {
         
-            let alertController = UIAlertController(title: "系统登录", message: "请输入选手A和选手B的姓名", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "系统登录", message: "请输入选手A和选手B的姓名(A选手有发球权，B选手有选场地权）", preferredStyle: UIAlertControllerStyle.alert)
             
             alertController.addTextField { (textField:UITextField) in
                 textField.placeholder = "选手A"
@@ -115,7 +113,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
                 self.nameB.text = nameB.text
                 aname = (nameA.text!)
                 bname = (nameB.text!)
- 
             }
             
             alertController.addAction(cancelAction)
@@ -126,7 +123,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             self.present(alertController, animated: true, completion: nil)
         
     }
-    
     @IBAction func start(_ sender: Any) {
         x = 0
         y = 0
@@ -140,53 +136,59 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         x = x + 1
         A.text = "\(x)"
         if x <= 10 && y<=10 {
-        if( (x+y)%4==1 || (x+y)%4==2){
-            M.text = aname + play
-        }else if((x+y)%4==3 || (x+y)%4==0){
-            M.text = bname + play
-        }
+               if( (x+y)%4==1 || (x+y)%4==2){
+                    M.text = aname + play
+               }
+               else if((x+y)%4==3 || (x+y)%4==0){
+                    M.text = bname + play
+                }
         }
         if x >= 10 && y >= 10{
             if x >= y + 2{
                 if((x+y)%2==0){
                     M.text = aname + play
-                }else if((x+y)%2==1){
+                }
+                else if((x+y)%2==1){
                     M.text = bname + play
                 }
-                A.text = "A获胜"
+                A.text = "获  胜"
                 i = i + 1
                 A.text = A.text
             }
-        }else if  x > y && x >= 11 {
-            i = i + 1
-            A.text = "A获胜"
+        }
+        else if  x > y && x >= 11 {
+            A.text = "获  胜"
             A.text = A.text
-    }
+            i = i + 1
+        }
     }
     @IBAction func Badd(_ sender: UIButton) {
         y = y + 1
         B.text = "\(y)"
         if x <= 10&&y<=10 {
-        if (x+y)%4==1 || (x+y)%4==2{
-            M.text = aname + play
-        }else if(x+y)%4==3 || (x+y)%4==0{
-            M.text = bname + play
+            if (x+y)%4==1 || (x+y)%4==2{
+                M.text = aname + play
+            }
+            else if(x+y)%4==3 || (x+y)%4==0{
+                M.text = bname + play
             }
         }
         if x >= 10 && y >= 10{
             if y >= x + 2{
                 if(x+y)%2==0{
                     M.text = aname + play
-                }else if (x+y)%2==1{
+                }
+                else if (x+y)%2==1{
                     M.text = bname + play
                 }
-                B.text = "B获胜"
-                j = j + 1
+                B.text = "获  胜"
                 B.text = B.text
+                j = j + 1
             }
-        }else if  y > x && y >= 11 {
+        }
+        else if  y > x && y >= 11 {
             j = j + 1
-            B.text = "B获胜"
+            B.text = "获  胜"
             B.text = B.text
         }
     }
@@ -198,6 +200,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         if x<0{
             A.text = "\(0)"
         }
+        if x <= 10&&y<=10 {
+            if (x+y)%4==1 || (x+y)%4==2{
+                M.text = aname + play
+            }
+            else if(x+y)%4==3 || (x+y)%4==0{
+                M.text = bname + play
+            }
+        }
+        if x >= 10 && y >= 10{
+            if y >= x + 2{
+                if(x+y)%2==0{
+                    M.text = aname + play
+                }
+                else if (x+y)%2==1{
+                    M.text = bname + play
+                }
+            }
+        }
     }
     @IBAction func Bback(_ sender: UIButton) {
         B.text = "\(y)"
@@ -205,6 +225,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         B.text = "\(y)"
         if y<0{
             B.text = "\(0)"
+        }
+        if x <= 10&&y<=10 {
+            if (x+y)%4==1 || (x+y)%4==2{
+                M.text = aname + play
+            }
+            else if(x+y)%4==3 || (x+y)%4==0{
+                M.text = bname + play
+            }
+        }
+        if x >= 10 && y >= 10{
+            if y >= x + 2{
+                if(x+y)%2==0{
+                    M.text = aname + play
+                }
+                else if (x+y)%2==1{
+                    M.text = bname + play
+                }
+            }
         }
     }
     @IBAction func end(_ sender: Any) {
@@ -220,8 +258,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             Y.text = "\(n)"
             Z.text = " VS "
             N.text = "\(m)"
-  
-        }else if j >= i{
+        }
+        else if j >= i{
             m = m + 1
             Y.text = "\(n)"
             Z.text = " VS "
