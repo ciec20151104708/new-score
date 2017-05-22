@@ -14,6 +14,7 @@
 		8E2CE6651EADA31000E0D4BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2CE6631EADA31000E0D4BC /* LaunchScreen.storyboard */; };
 		8E2CE6701EADA31000E0D4BC /* new_scoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CE66F1EADA31000E0D4BC /* new_scoreTests.swift */; };
 		8E2CE67B1EADA31000E0D4BC /* new_scoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CE67A1EADA31000E0D4BC /* new_scoreUITests.swift */; };
+		8E48A6541ED2897E00014D51 /* table tannis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E48A6531ED2897E00014D51 /* table tannis.jpg */; };
 		8EA99C221EB0474A005B97A4 /* pingpang.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8EA99C211EB0474A005B97A4 /* pingpang.jpg */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		8E2CE6761EADA31000E0D4BC /* new scoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "new scoreUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2CE67A1EADA31000E0D4BC /* new_scoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new_scoreUITests.swift; sourceTree = "<group>"; };
 		8E2CE67C1EADA31000E0D4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E48A6531ED2897E00014D51 /* table tannis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "table tannis.jpg"; path = "../../../Downloads/table tannis.jpg"; sourceTree = "<group>"; };
 		8EA99C211EB0474A005B97A4 /* pingpang.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pingpang.jpg; path = ../../../Downloads/pingpang.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				8E2CE6631EADA31000E0D4BC /* LaunchScreen.storyboard */,
 				8E2CE6661EADA31000E0D4BC /* Info.plist */,
 				8EA99C211EB0474A005B97A4 /* pingpang.jpg */,
+				8E48A6531ED2897E00014D51 /* table tannis.jpg */,
 			);
 			path = "new score";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				8E2CE6621EADA31000E0D4BC /* Assets.xcassets in Resources */,
 				8E2CE6601EADA31000E0D4BC /* Main.storyboard in Resources */,
 				8EA99C221EB0474A005B97A4 /* pingpang.jpg in Resources */,
+				8E48A6541ED2897E00014D51 /* table tannis.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -93,7 +93,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var nameB: UITextField!
 
     @IBAction func addinfo(_ sender: Any) {
-        
             let alertController = UIAlertController(title: "系统登录", message: "请输入选手A和选手B的姓名(A选手有发球权，B选手有选场地权）", preferredStyle: UIAlertControllerStyle.alert)
             
             alertController.addTextField { (textField:UITextField) in
@@ -102,7 +101,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             alertController.addTextField { (textField:UITextField) in
                 textField.placeholder = "选手B"
             }
-            
             let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
             let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.default) { (UIAlertAction) in
                 let nameA = alertController.textFields![0]
@@ -114,11 +112,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
                 aname = (nameA.text!)
                 bname = (nameB.text!)
             }
-            
             alertController.addAction(cancelAction)
             alertController.addAction(okAction)
-            
-            
             // 弹出
             self.present(alertController, animated: true, completion: nil)
         
@@ -209,7 +204,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         }
         if x >= 10 && y >= 10{
-            if y >= x + 2{
+            if x >= y + 2{
                 if(x+y)%2==0{
                     M.text = aname + play
                 }

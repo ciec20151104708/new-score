@@ -49,5 +49,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "new score/ViewController.swift"
+            timestampString = "517113948.094978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "addinfo(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "new_score.ViewController.addinfo (Any) -&gt; ()"
+                  moduleName = "new score"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s20151104708/Desktop/new%20score/new%20score/ViewController.swift"
+                  timestampString = "517113949.108039"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "483">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "new_score.ViewController.(addinfo (Any) -&gt; ()).(closure #1)"
+                  moduleName = "new score"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s20151104708/Desktop/new%20score/new%20score/ViewController.swift"
+                  timestampString = "517113949.109792"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "141">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
